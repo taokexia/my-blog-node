@@ -3,6 +3,7 @@ const user = require('./user');
 const article = require('./article');
 const comment = require('./comment');
 const tag = require('./tag');
+const message = require('./message');
 
 module.exports = app => {
 	// 用户相关操作
@@ -35,4 +36,11 @@ module.exports = app => {
 	app.post('/addTag', tag.addTag);
 	app.post('/delTag', tag.delTag);
 	app.get('/getTagList', tag.getTagList);
+	
+	// 留言相关操作
+	app.post('/addMessage', message.addMessage);
+	app.post('/addReplyMessage', message.addReplyMessage);
+	app.post('/delMessage', message.delMessage);
+	app.post('/getMessageDetail', message.getMessageDetail);
+	app.get('/getMessageList', message.getMessageList);
 }
