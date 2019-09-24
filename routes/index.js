@@ -6,6 +6,7 @@ const tag = require('./tag');
 const message = require('./message');
 const link = require('./link');
 const category = require('./category');
+const timeAxis = require('./timeAxis');
 
 module.exports = app => {
 	// 用户相关操作
@@ -56,4 +57,11 @@ module.exports = app => {
 	app.post('/addCategory', category.addCategory);
 	app.post('/delCategory', category.delCategory);
 	app.get('/getCategoryList', category.getCategoryList);
+	
+	// 时间轴操作
+	app.post('/addTimeAxis', timeAxis.addTimeAxis);
+	app.post('/updateTimeAxis', timeAxis.updateTimeAxis);
+	app.post('/delTimeAxis', timeAxis.delTimeAxis);
+	app.get('/getTimeAxisList', timeAxis.getTimeAxisList);
+	app.post('/getTimeAxisDetail', timeAxis.getTimeAxisDetail);
 }
