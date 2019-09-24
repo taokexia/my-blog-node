@@ -5,6 +5,7 @@ const comment = require('./comment');
 const tag = require('./tag');
 const message = require('./message');
 const link = require('./link');
+const category = require('./category');
 
 module.exports = app => {
 	// 用户相关操作
@@ -50,4 +51,9 @@ module.exports = app => {
 	app.post('/updateLink', link.updateLink);
 	app.post('/delLink', link.delLink);
 	app.get('/getLinkList', link.getLinkList);
+	
+	// 分类操作
+	app.post('/addCategory', category.addCategory);
+	app.post('/delCategory', category.delCategory);
+	app.get('/getCategoryList', category.getCategoryList);
 }
