@@ -4,6 +4,7 @@ const article = require('./article');
 const comment = require('./comment');
 const tag = require('./tag');
 const message = require('./message');
+const link = require('./link');
 
 module.exports = app => {
 	// 用户相关操作
@@ -43,4 +44,10 @@ module.exports = app => {
 	app.post('/delMessage', message.delMessage);
 	app.post('/getMessageDetail', message.getMessageDetail);
 	app.get('/getMessageList', message.getMessageList);
+	
+	// 链接操作
+	app.post('/addLink', link.addLink);
+	app.post('/updateLink', link.updateLink);
+	app.post('/delLink', link.delLink);
+	app.get('/getLinkList', link.getLinkList);
 }
